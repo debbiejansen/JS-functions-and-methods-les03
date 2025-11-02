@@ -116,7 +116,17 @@ console.log(averageGrade([4, 8, 7, 9, 10, 4, 3]));
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 9
+//      er moet een let komen om de hoogste grade in op te slaan (geen const want moet kunnen veranderen)
+let highGrade = grades[0];
+//      Er moet een for loop komen om alle items in de array langs te gaan.
+for (let i = 0; i < grades.length; i++) {
+    //      de grades moeten vergeleken worden met elkaar om te kijken welke de hoogste is.
+    if (grades[i] > highGrade) {
+        highGrade = grades[i];
+    }
+}
 
+console.log(highGrade);
 
 /* 3b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
@@ -127,3 +137,17 @@ console.log(averageGrade([4, 8, 7, 9, 10, 4, 3]));
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+function highestGrade(grades){
+    let highGrade = grades[0];
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i] > highGrade) {
+            highGrade = grades[i];
+        }
+    }
+    return highGrade;
+}
+
+console.log(highestGrade(grades));
+console.log(highestGrade([6, 4, 5]));
+console.log(highestGrade([8, 9, 4, 6, 10]));
