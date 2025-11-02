@@ -61,7 +61,15 @@ console.log(cumLaude([4, 8, 7, 9, 10, 4, 3]));
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6.642857142857143
-
+// add alle items in de array bij elkaar op
+// deel dit door het aantal items in de array
+// met een for loop wordt alles in de array nagelopen
+let total = 0;
+for (let i = 0; i < grades.length; i++) {
+    total = total + grades[i];
+}
+const average = total / grades.length;
+console.log(average);
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -73,10 +81,29 @@ console.log(cumLaude([4, 8, 7, 9, 10, 4, 3]));
 // averageGrade([6, 4, 5]) geeft 5
 // averageGrade([8, 9, 4, 6, 10]) geeft 7.4
 
+function averageGrade(grades) {
+    let total = 0;
+    for (let i = 0; i < grades.length; i++) {
+        total = total + grades[i];
+    }
+    let average = total / grades.length;
+    average = average.toFixed(2);
+    return average
+}
+
+console.log(averageGrade(grades));
+console.log(averageGrade([6, 4, 5]));
+console.log(averageGrade([8, 9, 4, 6, 10]));
+console.log(averageGrade([4, 8, 7, 9, 10, 4, 3]));
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
+
+
+//     average = average.toFixed(2);
+//     average = parseFloat(average);
+//     Bovenstaande code toegevoegd aan de function om af te ronden
 
 
 /* Bonusopdracht: hoogste cijfer */
